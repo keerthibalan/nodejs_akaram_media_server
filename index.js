@@ -4,8 +4,9 @@ import express from "express";
 import bodyParser from "body-parser";
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import AuthRoute from './app/route/AccessControl.js';
-import UserRoute from './app/route/User.js';
+import AuthRoute from './app/route/accesscontrol.js';
+import UserRoute from './app/route/user.js';
+import PostRoute from './app/route/post.js';
 // Router
 
 const app = express();
@@ -27,3 +28,4 @@ mongoose.connect(process.env.DATABASE, { useNewUrlParser: true, useUnifiedTopolo
 
 app.use('/auth', AuthRoute)
 app.use('/user', UserRoute)
+app.use('/post', PostRoute)
