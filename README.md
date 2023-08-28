@@ -38,3 +38,40 @@ npm start
 
 # Application port
 5000
+http://localhost:5000
+
+# install CORS package
+
+The word CORS stands for “Cross-Origin Resource Sharing”. Cross-Origin Resource Sharing is an HTTP-header based mechanism implemented by the browser which allows a server or an API(Application Programming Interface) to indicate any origins (different in terms of protocol, hostname, or port) other than its origin from which the unknown origin gets permission to access and load resources. The cors package available in the npm registry is used to tackle CORS errors in a Node.js application
+
+ npm i cors
+
+
+ # install JWT package
+
+ JWTs are credentials, which can grant access to resources. Be careful where you paste them! We do not record tokens, all validation and debugging is done on the client side.
+
+ HEADER:ALGORITHM & TOKEN TYPE
+{
+  "alg": "HS256",
+  "typ": "JWT"
+}
+
+PAYLOAD:DATA
+
+{
+  "username": "keerthibalan",
+  "name": "Keerthibalan",
+  "date": ISODate String
+}
+
+VERIFY SIGNATURE
+HMACSHA256(
+  base64UrlEncode(header) + "." +
+  base64UrlEncode(payload),
+  
+your-256-bit-secret
+
+)
+
+ npm i jsonwebtoken
